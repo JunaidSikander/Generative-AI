@@ -1,0 +1,45 @@
+# ---- Secrets: never commit these ----
+.env
+.env.local
+*.key
+secrets.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+build/
+dist/
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+ENV/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---- Vector stores & model caches (large, regenerable) ----
+*.faiss
+*.pkl
+chroma_db/
+.chroma/
+faiss_index/
+models/
+*.gguf
+*.safetensors
+
+# ---- Editors & OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Lab outputs ----
+labs/**/output/
+labs/**/generated/
+*.log

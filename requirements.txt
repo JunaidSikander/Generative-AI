@@ -1,0 +1,79 @@
+# ============================================================
+#  GenAI From Scratch — Python dependencies
+# ============================================================
+#
+#  INSTALL EVERYTHING (recommended once you reach Module 2):
+#      pip install -r requirements.txt
+#
+#  Modules 1 needs NOTHING from this file — it is concept-only.
+#  Every later module lists exactly which packages it uses, so you
+#  can also install piecemeal if you prefer a leaner environment.
+#
+#  Versions use ">=" (minimum) rather than "==" (exact) so this file
+#  keeps working as the ecosystem moves. If a lab ever breaks after an
+#  upgrade, see appendix/D-troubleshooting.md for how to pin a version.
+# ============================================================
+
+
+# ---- Core: used from Module 2 onward ----------------------------
+python-dotenv>=1.0.0          # loads your .env file so keys stay out of code
+requests>=2.31.0              # plain HTTP calls
+jupyterlab>=4.0.0             # run notebooks on your own machine
+ipykernel>=6.29.0             # lets Jupyter see your virtual environment
+
+# ---- Data basics: Modules 2-3 ----------------------------------
+numpy>=1.26.0                 # numeric arrays; vectors and embeddings live here
+pandas>=2.1.0                 # tables of data
+matplotlib>=3.8.0             # simple plots (embedding visualisations)
+scikit-learn>=1.4.0           # PCA / t-SNE for shrinking embeddings to 2-D
+
+# ---- Model providers: Modules 3 onward -------------------------
+openai>=1.40.0                # primary provider used in the labs
+anthropic>=0.34.0             # optional alternative provider
+google-genai>=0.3.0           # optional; Gemini has a generous free tier
+
+# ---- Tokenisation & embeddings: Modules 3-4 --------------------
+tiktoken>=0.7.0               # the exact tokeniser OpenAI models use
+transformers>=4.44.0          # Hugging Face models, tokenisers, pipelines
+sentence-transformers>=3.0.0  # small local embedding models (free, offline)
+torch>=2.2.0                  # the deep-learning engine the above run on
+
+# ---- Orchestration: Modules 6, 8, 9, 10 ------------------------
+langchain>=0.3.0              # chains, prompts, memory, agents
+langchain-core>=0.3.0         # the Runnable / LCEL primitives
+langchain-community>=0.3.0    # community integrations (loaders, tools)
+langchain-openai>=0.2.0       # OpenAI adapter for LangChain
+langchain-ollama>=0.2.0       # FREE local adapter — the no-cost fallback
+langgraph>=0.2.0              # explicit state machines for agents (Module 9)
+
+# ---- Vector databases: Modules 7-8 -----------------------------
+faiss-cpu>=1.8.0              # in-process vector index; no server needed
+chromadb>=0.5.0               # lightweight local vector database
+langchain-chroma>=0.1.0       # Chroma adapter for LangChain
+rank-bm25>=0.2.2              # keyword search, for hybrid retrieval
+
+# ---- Document loading & chunking: Module 8 ---------------------
+pypdf>=4.2.0                  # read PDFs
+beautifulsoup4>=4.12.0        # parse HTML pages
+tqdm>=4.66.0                  # progress bars for long indexing runs
+
+# ---- Multimodal: Module 10 -------------------------------------
+pillow>=10.2.0                # open, resize and encode images
+
+# ---- Evaluation & guardrails: Module 11 ------------------------
+pydantic>=2.7.0               # schemas that validate model output
+ragas>=0.1.0                  # RAG metrics: faithfulness, relevance
+
+# ---- Fine-tuning: Module 12 ------------------------------------
+# Heavy packages. Install ONLY when you reach Module 12, and prefer
+# Google Colab (free GPU) over your own machine.
+# peft>=0.11.0                # LoRA / QLoRA adapters
+# datasets>=2.19.0            # training-data handling
+# accelerate>=0.30.0          # device placement and mixed precision
+# bitsandbytes>=0.43.0        # 4-bit quantisation (Linux/WSL or Colab)
+
+# ---- Deployment: Module 13 -------------------------------------
+gradio>=4.36.0                # fastest way to put a UI on a model
+streamlit>=1.35.0             # alternative UI framework
+fastapi>=0.111.0              # production-grade HTTP API
+uvicorn>=0.30.0               # the server that runs FastAPI
