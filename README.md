@@ -44,7 +44,7 @@ No prior AI knowledge. No prior Python. No maths beyond arithmetic. Every concep
 | # | Module | What you'll be able to do |
 |---|--------|---------------------------|
 | 7 | [Embeddings & Vector Databases](modules/07-vector-databases.md) | Store and search millions of vectors with FAISS and Chroma |
-| 8 | Retrieval-Augmented Generation (RAG) | Build a chatbot that answers from *your* documents, with citations |
+| 8 | [Retrieval-Augmented Generation (RAG)](modules/08-rag.md) 🏗️ | Build a chatbot that answers from *your* documents, with citations |
 
 **Part V — Models That Act**
 
@@ -69,7 +69,7 @@ No prior AI knowledge. No prior Python. No maths beyond arithmetic. Every concep
 - Appendix C: Model Landscape
 - Appendix D: Troubleshooting & FAQ
 
-> **📌 Build status:** Modules 1–7 and Labs 1–7 are complete. Modules 8–14 and the appendices are being written and published in order — links above go live as each lands. The original session notes are still in the repo root (`0.GenAI Basics.md` … `9.Open Ecosystem tools.md`) and remain readable until the module that supersedes them is published.
+> **📌 Build status:** Modules 1–8 and Labs 1–8 are complete — including the first portfolio milestone. Modules 9–14 and the appendices are being written and published in order — links above go live as each lands. The original session notes are still in the repo root (`0.GenAI Basics.md` … `9.Open Ecosystem tools.md`) and remain readable until the module that supersedes them is published.
 >
 > **🔧 Something broken?** Run `python labs/02-python-environment/check_setup.py` — it diagnoses Python version, virtual environment, packages and API-key setup, and tells you the command to fix each problem.
 
