@@ -64,12 +64,15 @@ No prior AI knowledge. No prior Python. No maths beyond arithmetic. Every concep
 
 **Reference**
 
-- Appendix A: Running Models Locally (Ollama, LM Studio, Flowise)
-- Appendix B: Glossary
-- Appendix C: Model Landscape
-- Appendix D: Troubleshooting & FAQ
+| Appendix | What's in it |
+|---|---|
+| [A — Running Models Locally](appendix/A-local-stack.md) | Ollama, LM Studio, local embeddings, Flowise, and which labs work offline |
+| [B — Glossary](appendix/B-glossary.md) | Every term in the course, A–Z, linked to where it's taught |
+| [C — Model Landscape](appendix/C-model-landscape.md) | How to choose a model, read a pricing page, and find current facts |
+| [D — Troubleshooting & FAQ](appendix/D-troubleshooting.md) | Every error learners actually hit, with the fix |
+| [Archive](archive/README.md) | The original session notes and notebooks, and where each part went |
 
-> **✅ Build status: all 14 modules and 14 labs are complete**, including both portfolio milestones. The appendices are still to come. The original session notes remain in the repo root (`0.GenAI Basics.md` … `9.Open Ecosystem tools.md`) as a reference and will be archived shortly.
+> **✅ Build status: complete.** All 14 modules, 14 labs, both portfolio milestones and all four appendices are finished. The original session notes and notebooks now live in [`archive/`](archive/README.md), with a table showing where each part ended up.
 >
 > **🔧 Something broken?** Run `python labs/02-python-environment/check_setup.py` — it diagnoses Python version, virtual environment, packages and API-key setup, and tells you the command to fix each problem.
 
@@ -168,8 +171,8 @@ GenAI/
 │       └── SOLUTION.md
 │
 ├── images/                ← diagrams referenced by the modules
-├── appendix/              ← glossary, troubleshooting, reference tables
-└── Coding Examples/       ← original session notebooks (being migrated into labs/)
+├── appendix/              ← local models, glossary, model choice, troubleshooting
+└── archive/               ← the original notes and notebooks this course was built from
 ```
 
 ### 3. Work through it
@@ -185,7 +188,7 @@ For each module, in this order:
 ### 4. Rules of engagement
 
 - **Go in order.** Each module genuinely depends on the previous one. Module 8 (RAG) will be meaningless without Module 7 (vector databases), which needs Module 3 (embeddings).
-- **Getting stuck is normal.** Check `appendix/D-troubleshooting.md` first, then open an issue.
+- **Getting stuck is normal.** Run `python labs/02-python-environment/check_setup.py`, then check [Appendix D](appendix/D-troubleshooting.md), then open an issue.
 - **Type the code.** Copy-paste teaches your clipboard, not you.
 
 ## A Note on Cost
