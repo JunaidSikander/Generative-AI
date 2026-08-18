@@ -60,7 +60,7 @@ No prior AI knowledge. No prior Python. No maths beyond arithmetic. Every concep
 | 11 | [Guardrails, Evaluation & Responsible AI](modules/11-guardrails-evaluation.md) | Measure quality and block unsafe output |
 | 12 | [Fine-Tuning & Model Customization](modules/12-fine-tuning.md) | Decide between prompting, RAG and LoRA — then train an adapter |
 | 13 | [Deployment Basics](modules/13-deployment.md) 🚀 | Ship a shareable demo and control your costs |
-| 14 | Ethics & Limitations | Reason clearly about bias, IP, energy and what GenAI cannot do |
+| 14 | [Ethics & Limitations](modules/14-ethics-limitations.md) 🎓 | Reason clearly about bias, IP, energy and what GenAI cannot do |
 
 **Reference**
 
@@ -69,7 +69,7 @@ No prior AI knowledge. No prior Python. No maths beyond arithmetic. Every concep
 - Appendix C: Model Landscape
 - Appendix D: Troubleshooting & FAQ
 
-> **📌 Build status:** Modules 1–13 and Labs 1–13 are complete — including both portfolio milestones. Module 14 and the appendices are being written and published in order — links above go live as each lands. The original session notes are still in the repo root (`0.GenAI Basics.md` … `9.Open Ecosystem tools.md`) and remain readable until the module that supersedes them is published.
+> **✅ Build status: all 14 modules and 14 labs are complete**, including both portfolio milestones. The appendices are still to come. The original session notes remain in the repo root (`0.GenAI Basics.md` … `9.Open Ecosystem tools.md`) as a reference and will be archived shortly.
 >
 > **🔧 Something broken?** Run `python labs/02-python-environment/check_setup.py` — it diagnoses Python version, virtual environment, packages and API-key setup, and tells you the command to fix each problem.
 
