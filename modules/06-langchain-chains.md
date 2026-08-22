@@ -453,6 +453,8 @@ chain = prompt | model | StrOutputParser() | RunnableLambda(extract_first_line)
 
 Five patterns cover almost everything.
 
+![Five chain composition patterns: sequential, parallel, passthrough, branching, and fallbacks with retries](../images/chain-composition-patterns.png)
+
 ### 1. Sequential — output feeds the next input
 
 ```python
@@ -652,6 +654,8 @@ The real question is *what* to keep, because you can't keep everything forever.
 | **Vector-backed** | Embeds turns; retrieves the relevant ones | Retrieval-based | Very long histories with selective recall |
 
 **Start with a window.** It's simple, cheap and predictable. Move to summary-plus-buffer when you find users referring back to things a window drops.
+
+![Six memory strategies compared, with a cost curve showing that unbounded buffer memory makes total conversation cost grow quadratically](../images/memory-strategies.png)
 
 ### Implementing a window
 

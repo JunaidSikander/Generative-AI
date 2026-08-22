@@ -120,6 +120,8 @@ Here's the whole journey from your text to the model's answer. This module cover
   └─────────────┘
 ```
 
+![The six stages from your text to the model's answer: tokenize, embed, attention, layers, logits, sample, then loop](../images/text-to-answer-pipeline.png)
+
 ---
 
 ## 3.2 Tokenization: Text Into Pieces
@@ -153,7 +155,7 @@ Frequent words stay whole. Rare words break into reusable pieces.
 
 Notice `izing`. Having learned that piece, the model can handle *tokenizing*, *organizing*, *categorizing* — and even words it has never seen, like *frobnicating*. **There are no unknown words**, because worst case it falls back to smaller and smaller pieces.
 
-![Tokenization and context sizes](../images/tokenizer.png)
+![Subword tokenization: why sub-word pieces beat characters and whole words, how byte-pair encoding builds a vocabulary, and why the model cannot count letters](../images/subword-tokenization.png)
 
 ### How the vocabulary is built
 
@@ -389,6 +391,8 @@ Subtracting "man" and adding "woman" moves you along something like a gender dir
 A static embedding gives "bit" one vector, so the verb and the quantity are **indistinguishable**. That's a hard ceiling.
 
 Transformers fix it. The embedding layer still starts with one vector per token, but each attention layer **reshapes it based on surrounding words**. By the final layer, the two "bit"s have genuinely different vectors.
+
+![Static embeddings give the word 'bit' one fixed vector, so a verb and a quantity are indistinguishable; contextual embeddings give it a different vector in each sentence](../images/static-vs-contextual-embeddings.png)
 
 **That reshaping is exactly what attention does, and it's the entire subject of Module 4.** This is the cliffhanger the next module resolves.
 
@@ -793,6 +797,8 @@ for t in [0.2, 1.0, 2.0]:
 ```
 
 Dividing by a small number spreads the logits apart, so the top token dominates. Dividing by a large number squashes them together, so unlikely tokens get a real chance.
+
+![Temperature reshapes the probability distribution: low values sharpen it toward the top token, high values flatten it so unlikely tokens get a real chance](../images/temperature-distribution.png)
 
 | Temperature | Behaviour | Use for |
 |---|---|---|

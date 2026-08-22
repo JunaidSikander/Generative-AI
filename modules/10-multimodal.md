@@ -79,6 +79,8 @@ The mechanism is simpler than it sounds, and it reuses everything from Modules 3
 
 > **🔑 The key insight: an image becomes tokens.** Once projected, the transformer doesn't distinguish "image tokens" from "text tokens" — attention runs over one mixed sequence. Everything you know from Module 4 applies unchanged.
 
+![Image, audio and text each pass through their own encoder into a projection layer, then enter the transformer as one unified token sequence](../images/image-becomes-tokens.png)
+
 That single fact explains most of what follows:
 
 | Consequence | Why |
@@ -154,6 +156,8 @@ def estimate_image_tokens(width: int, height: int, detail: str = "high") -> int:
 | 1024 × 1024 | 765 | 85 | 9× |
 | 2048 × 2048 | 765 | 85 | 9× |
 | **3000 × 4000** | **765** | 85 | 9× |
+
+![The image tiling algorithm and the token-cost plateau: everything above about 1024px on the short side costs the same 765 tokens](../images/image-token-cost.png)
 
 ### The finding that matters
 
@@ -768,6 +772,8 @@ It gets worse in combination:
 | Image injection + **automated approval** | The injection *is* the approval |
 
 An uploaded invoice with hidden instruction text is a plausible attack on any automated invoice-processing pipeline.
+
+![A plausible invoice carrying faint injected instructions that keyword filters and human reviewers both miss, and what the model reads instead](../images/image-borne-injection.png)
 
 ### Why it's harder to screen than text
 

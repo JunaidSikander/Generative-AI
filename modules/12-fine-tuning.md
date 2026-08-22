@@ -68,6 +68,8 @@ What has changed recently is the cost. Full fine-tuning of a large model needs a
 
 **Most projects stop at 1 or 2.** Climbing the ladder costs increasing time, money and operational burden, and each rung is harder to undo.
 
+![Prompt, then RAG, then fine-tune: an escalation ladder with a capability matrix and a diagnostic mapping symptoms to the right lever](../images/prompt-rag-finetune-ladder.png)
+
 ### What each one can and cannot do
 
 | Need | Prompt | RAG | Fine-tune |
@@ -213,6 +215,8 @@ For a 4096 × 4096 matrix, `ΔW` has 16.7 million values. **But the observation 
 ```
 
 At inference the adapter is added back: `W + BA`. The base weights never change.
+
+![LoRA approximates a large weight update with two thin matrices, shown at true relative scale, producing an 8 MB adapter for a 14 GB model](../images/lora-decomposition.png)
 
 ### The arithmetic
 
@@ -486,6 +490,8 @@ arguments = TrainingArguments(
             means it is memorising, not learning.
 ```
 
+![Training loss falls continuously while validation loss turns upward; the minimum marks the best epoch and everything past it is memorisation](../images/loss-curves-overfitting.png)
+
 **Training loss falling while validation loss rises is overfitting**, and it's the single most important thing to watch. `load_best_model_at_end=True` saves you from shipping the overfitted final epoch.
 
 > **⚠️ A training loss near zero is a warning, not a success.** It means the model has memorised your examples. It will reproduce them perfectly and generalise poorly.
@@ -538,6 +544,8 @@ The operational payoff of LoRA.
    │   └──────────┘ └──────────┘ └─────────┘  │
    └──────────────────────────────────────────┘
 ```
+
+![One base model loaded once with three 8 MB adapters swapped per request, against three separate full fine-tuned models at 14 GB each](../images/one-base-many-adapters.png)
 
 One 14 GB base in memory; adapters swapped per request. Full fine-tuning would need a separate 14 GB model per specialisation.
 

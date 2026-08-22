@@ -165,6 +165,8 @@ And it is substantially worse at identifying qualified people in group B — it 
 >
 > So **choosing which definition to optimise is a values decision, not a technical one.** It belongs to whoever owns the product and its consequences — and it should be written down and defended, not left implicit in whichever metric someone happened to compute.
 
+![Two groups with identical selection rates: disparate impact and demographic parity both look perfect while equal opportunity shows a 40-point gap](../images/fairness-metrics-disagree.png)
+
 ### Choosing deliberately
 
 | If the harm is... | Favour |
@@ -263,6 +265,8 @@ This is the part that's usually stated backwards. Rough arithmetic:
 **At a billion queries, inference has matched the training cost.** A widely-deployed model passes that within its first months.
 
 > **🔑 For any model at scale, inference dominates its lifetime footprint.** Which means the environmental lever available to *you* — as someone building on top — is real: every optimisation from Module 13 is also an environmental one.
+
+![Cumulative energy: training is a one-off plateau, inference is a rising line, and they cross at about a billion queries](../images/inference-vs-training-energy.png)
 
 ### Be sceptical of the numbers
 
@@ -371,6 +375,8 @@ A clear-eyed list, and every item traces back to something earlier in this cours
 | **Reason reliably over very long context** | Recall degrades in the middle | 3 §3.9 |
 | **Distinguish instructions from data** | One flat token stream | 11 §11.2 |
 | **Explain its own reasoning faithfully** | Stated reasoning may not be actual computation | 4, 5 §5.6 |
+
+![Ten things an LLM cannot do, each paired with the technique built to compensate and the module that teaches it](../images/limitations-and-compensations.png)
 
 ### The two that catch people out
 

@@ -576,6 +576,8 @@ def reciprocal_rank_fusion(rankings: list[list], k: int = 60) -> list:
 
 The `k` constant damps the top ranks: with `k=60`, rank 1 scores `1/61` and rank 2 scores `1/62` — close together, so being #1 in one ranking doesn't automatically beat being #2 in both.
 
+![Hybrid search: a dense semantic arm and a sparse BM25 arm produce incompatible score scales, so reciprocal rank fusion discards the scores and merges by rank position](../images/hybrid-search-rrf.png)
+
 ### Putting hybrid search together
 
 ```python
@@ -628,6 +630,8 @@ That last point is the important one, and it's an architectural limitation:
 ```
 
 A bi-encoder must compress a document into a vector **without knowing the query**. A cross-encoder reads both together and can notice that this specific document answers this specific question — which no independent embedding can.
+
+![A bi-encoder embeds query and document separately with no interaction between them; a cross-encoder reads both together with full attention across the pair](../images/bi-encoder-vs-cross-encoder.png)
 
 ![Re-ranking](../images/re_ranking.png)
 
@@ -909,6 +913,8 @@ Three questions, three metrics. Module 11 builds these properly; know the shape 
 | **Context relevance** | Did retrieval find the right chunks? | Fix chunking, retrieval, re-ranking |
 | **Faithfulness** | Is the answer supported by the context? | Fix the prompt — the model is inventing |
 | **Answer relevance** | Does the answer address the question? | Fix the prompt or the model |
+
+![The RAG evaluation triad, and a diagnosis matrix showing which fix each combination of context relevance and faithfulness points at](../images/rag-evaluation-triad.png)
 
 **Diagnosing with all three is the point.** A bad answer with good context relevance and poor faithfulness is a *prompting* problem. Poor context relevance is a *retrieval* problem. Without the split you're guessing.
 

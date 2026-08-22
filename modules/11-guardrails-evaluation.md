@@ -127,6 +127,8 @@ Module 4 §4.7 explains the mechanism: everything arrives as one flat token sequ
 
 That's why there's no equivalent of parameterised queries for prompts, and why every defence in this module is a mitigation rather than a fix. Anyone selling you a complete solution to prompt injection is selling you something that doesn't exist.
 
+![Parameterised SQL separates trusted structure from untrusted values architecturally; an LLM receives one flat token stream with no such boundary](../images/semantic-gap.png)
+
 ### What follows practically
 
 | Because... | You must... |
@@ -446,6 +448,8 @@ def backoff_with_jitter(attempts: int, base: float = 1.0,
 
 Without jitter, a thousand clients that failed simultaneously all retry simultaneously — the **thundering herd**, which re-breaks the service you're waiting for. Randomising spreads the load.
 
+![The circuit breaker state machine: closed, open and half-open, with a call timeline showing that a success resets the consecutive-failure counter](../images/circuit-breaker.png)
+
 ### 3. Circuit breakers
 
 Backoff handles a blip. A circuit breaker handles a sustained outage: **stop calling a service that is clearly down.**
@@ -688,6 +692,8 @@ def precision_recall_f1(predicted: set, actual: set) -> dict:
             "false_positives": len(predicted - actual),
             "false_negatives": len(actual - predicted)}
 ```
+
+![A confusion matrix with precision and recall bracketed over the cells they divide, and the imbalance trap where 99% accuracy catches nothing](../images/precision-recall.png)
 
 ### Choosing between precision and recall
 

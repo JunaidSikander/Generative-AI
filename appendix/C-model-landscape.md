@@ -63,6 +63,8 @@ Specific models change; **this shape has been stable for years** and is a safer 
 | **Reasoning** | Extended internal reasoning before answering; slow; costly | Maths, planning, hard analysis |
 | **Open-weight local** | Free after hardware; private; variable quality | Privacy-critical work, offline, unlimited iteration |
 
+![Five model tiers positioned by capability and cost: frontier, reasoning, workhorse, small/fast and open-weight local, with the workhorse tier marked as where most production work lives](../images/model-tiers.png)
+
 Providers usually offer something in each tier, named to signal position — a "mini", "flash", "haiku" or "nano" suffix generally means small and fast.
 
 ### The tier mistake people make

@@ -4,6 +4,8 @@
 
 No prior AI knowledge. No prior Python. No maths beyond arithmetic. Every concept gets a plain-English explanation, an everyday analogy, and a small piece of commented code you can actually run.
 
+![The GenAI From Scratch course map: fourteen modules in six parts, with dependency arcs, two portfolio milestones and a shortest path to a working RAG app](images/course-map.png)
+
 ---
 
 ## Table of Contents
@@ -104,6 +106,8 @@ This course sits in the gap. It assumes you are smart and motivated but have nev
 ## What You'll Build
 
 Two portfolio pieces, plus a lab in every module:
+
+![What you will actually have: a document Q&A bot that answers with checkable citations, and a deployed shareable app with cost controls behind it](images/portfolio-milestones.png)
 
 | Milestone | Module | What it is |
 |-----------|--------|------------|

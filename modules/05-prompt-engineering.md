@@ -88,7 +88,7 @@ Most effective prompts have four parts. Not every prompt needs all four, but nam
 | **📥 Input data** | The actual thing to process | The ticket text itself |
 | **📤 Output indicator** | The required shape of the answer | "Return JSON with keys: category, urgency" |
 
-![The effective prompting cycle](../images/effective_prompting.png)
+![The four parts of a prompt bracketed on a real support-ticket prompt: instruction, context, input data and output indicator](../images/prompt-four-parts.png)
 
 ### Assembled
 
@@ -163,6 +163,8 @@ messages = [
 This ordering is called the **instruction hierarchy**: system instructions are meant to take precedence over user instructions, which take precedence over content the model merely *reads* (a retrieved document, a tool result).
 
 > **⚠️ It's a strong preference, not a hard boundary.** The hierarchy is trained-in behaviour, not an architectural guarantee — and Module 4 §4.7 tells you why: everything arrives as one flat sequence of tokens in a single context window. There's no separate privileged channel. A sufficiently clever user message can override a system prompt; that's exactly what prompt injection is, and it's why Module 11 exists. Design as though the system prompt is influential, never as though it's inviolable.
+
+![The instruction hierarchy is a trained-in preference, not architecture: the intended pyramid above, and the flat single token stream the model actually receives below](../images/instruction-hierarchy.png)
 
 ### System vs user: what goes where
 
@@ -517,6 +519,8 @@ environmental commitment. Choose a bottle that outlasts the trend.
 | **Best for** | Most reasoning tasks | When accuracy matters | Planning, search, creative work |
 
 **Start with CoT.** Add self-consistency if accuracy matters. Reach for ToT only when the task genuinely involves exploring alternatives.
+
+![Chain-of-thought is one linear path, self-consistency runs several and votes, tree-of-thought branches and prunes](../images/cot-selfconsistency-tot.png)
 
 ### Stacking techniques
 
@@ -902,6 +906,8 @@ Prompt engineering is empirical. You cannot reason your way to a good prompt; yo
             │
             └──────────▶ back to 3
 ```
+
+![The effective prompting cycle: context, consistency, iteration, constraints, clarity](../images/effective_prompting.png)
 
 **Step 3 is the one people skip.** Testing a prompt on one input tells you almost nothing — models are stochastic (Module 3 §3.8), so a single success may be luck. Ten to twenty inputs including deliberate edge cases is the minimum useful test.
 

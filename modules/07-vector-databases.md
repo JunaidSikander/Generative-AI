@@ -164,6 +164,8 @@ It also explains the cost result from Lab 3's stretch challenge — embedding a 
 
 **ANN** = Approximate Nearest Neighbour. Four families, and you'll meet all four in vector-database configuration options.
 
+![Four ANN index families searching the same point cloud: flat compares everything, IVF probes a few clusters, HNSW walks a layered graph, quantization compresses the vectors](../images/ann-index-families.png)
+
 ### 1. Flat (brute force) — exact, and the baseline
 
 Compare against everything. No index at all.
@@ -237,6 +239,8 @@ It's the same idea as finding a house: motorway, then main road, then street, th
 
 **Default to HNSW** unless you have a specific reason not to. The usual reason is memory.
 
+![How HNSW finds a neighbour: enter the sparse top layer, hop toward the query, descend a layer and repeat, like motorway to main road to street to door](../images/hnsw-navigation.png)
+
 ### 4. Quantization (PQ) and hashing (LSH) — compress the vectors
 
 Rather than organising the vectors, shrink them.
@@ -296,6 +300,8 @@ Here's real measured output from the lab's IVF implementation — 2,000 vectors,
 **Look at `n_probe=2`: 85% recall while touching under 7% of the data.** That's a ~15× speedup for a 15% accuracy loss. Whether that trade is acceptable depends on your task — but it's the trade ANN indexes exist to offer.
 
 And note it saturates. Going from `n_probe=4` to `32` costs 8× the work for *zero* additional recall. **Tuning past the point of diminishing returns is pure waste** — which you can only know by measuring.
+
+![The recall-latency trade-off curve, showing 85% recall while scanning under 7% of the data, and the saturation point past which more work buys no recall](../images/recall-latency-tradeoff.png)
 
 ### The caveat that matters
 
@@ -389,6 +395,8 @@ The failure is concrete: if only 0.1% of your corpus matches `department = 'lega
 | **Always returns k results** if k exist | Can defeat the ANN index entirely |
 
 The problem: an HNSW graph is built over *all* vectors. Removing most of them can disconnect the graph, so greedy traversal gets stranded and recall collapses. Modern databases handle this with filtered-search algorithms that walk the graph while respecting the filter — but the quality depends on the implementation, and it's worth knowing this is where vector databases genuinely differ.
+
+![Post-filtering searches everything then discards and can return nothing; pre-filtering restricts first but can fragment the graph. Never post-filter for access control](../images/pre-vs-post-filtering.png)
 
 ### The practical rule
 

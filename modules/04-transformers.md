@@ -65,6 +65,8 @@ Take the token **"bit"** in two sentences:
 
 So any system that assigns "bit" a single fixed vector has already lost. It needs a way to **look at the surrounding words and adjust**.
 
+![The same token 'bit' means a verb in one sentence and a quantity in another; only the neighbouring words differ](../images/static-vs-contextual-embeddings.png)
+
 That's attention, stated as a one-line intuition:
 
 > **Each word asks every other word: "are you relevant to me?" — then rebuilds itself as a blend of the ones that are.**
@@ -102,6 +104,8 @@ Q = X · W_Q          X   = the input embeddings          (n_tokens × d_model)
 K = X · W_K          W_* = learned weight matrices       (d_model × d_k)
 V = X · W_V
 ```
+
+![Query, key and value explained through a library: your request, what each book advertises on its spine, and what it actually contains](../images/query-key-value.png)
 
 Those three `W` matrices are **parameters** — part of the billions the model learned during training (Module 1 §1.3). Training discovers what makes a useful query, a useful key and a useful value.
 
@@ -167,6 +171,8 @@ output = weights @ V
 ```
 
 Each word's new vector is a weighted average of all the value vectors, using its own row of weights. **"bit" is now literally made partly of "dog" and "man".** Its vector has changed to reflect its context.
+
+![Attention in four steps with real numbers: score every pair, scale by the square root of d_k, softmax into weights, then blend the value vectors](../images/attention-four-steps.png)
 
 ### All four steps together
 
@@ -510,6 +516,8 @@ That third point is the deep one. Instead of a specialised model per task, you g
 The encoder reads the input bidirectionally; the decoder generates output while attending to the encoder's representation via **cross-attention** (queries from the decoder, keys and values from the encoder).
 
 Natural for translation, where input and output are different languages. Largely superseded for general-purpose work, because decoder-only models handle these tasks well enough with far simpler training.
+
+![Encoder-only models read bidirectionally and suit embeddings; decoder-only models are causal and suit generation; encoder-decoder models bridge the two with cross-attention](../images/encoder-decoder-families.png)
 
 ### Choosing
 

@@ -254,6 +254,8 @@ Turn it into a self-made exercise:
     Correct answer:     "Paris"      ← already in the data. Nobody labelled it.
 ```
 
+![Self-supervised learning: text is turned into its own training exercise by hiding a word, so every word in every sentence becomes a free labelled example](../images/self-supervised-learning.png)
+
 Repeat across trillions of words from books, code and the web. Every single word in every sentence becomes a free training example.
 
 **Why this changed everything:** supervised learning needs humans to label data, so it caps out at maybe millions of examples. Self-supervised learning needs no humans, so it scales to *trillions*. That's the unlock that made large language models possible. To learn to fill in the blank across a huge diversity of text, a model has to pick up grammar, facts, reasoning patterns, translation, and code — because all of those help it predict the missing word.
@@ -445,6 +447,8 @@ Round 4:  "The capital of France is Paris, and" → " it"
 
 It stops when it generates a special *end-of-text* token, hits a length limit, or you cut it off.
 
+![The autoregressive loop: tokenize, predict a probability for every token, sample one, append it, then re-read the entire text and repeat](../images/autoregressive-loop.png)
+
 ### Read this code — don't run it
 
 This is the loop in Python-shaped pseudocode. Every LLM in existence is a very sophisticated version of this:
@@ -533,6 +537,8 @@ The generative model is still the engine. What's new is the **loop**, the **tool
 1. **Plan** — break a goal into steps
 2. **Act** — actually use tools: call APIs, search, run code, write files
 3. **Reflect** — check the result and adapt if it failed
+
+![Generative AI answers in one turn; agentic AI runs the same model inside a loop with tools, so its failures become actions rather than paragraphs](../images/generative-vs-agentic.png)
 
 ### Comparison
 

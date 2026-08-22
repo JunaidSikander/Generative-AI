@@ -79,6 +79,8 @@ Four distinct things people mean by "deployed", with very different requirements
                    └───────────────────────────────────┘
 ```
 
+![The deployed request pipeline: rate limit, cache lookup, budget guard and guardrails each offer an early exit before the expensive model call](../images/deployed-request-pipeline.png)
+
 Note the order. **Rate limiting and cache lookup come before anything expensive** — the cheapest way to survive a traffic spike is not to make the call.
 
 ---
@@ -381,6 +383,8 @@ The section that protects you.
    3. RATE LIMITING             bounds requests per user (section 13.8)
    4. CACHING                   avoids paying twice (section 13.7)
 ```
+
+![Four nested layers between you and a surprise bill: the provider spending cap, an application budget guard, rate limiting and caching](../images/cost-control-layers.png)
 
 **Layer 1 is non-negotiable and takes two minutes.** Every provider has a monthly spending limit in billing settings. Set it before you deploy anything public.
 
@@ -817,6 +821,8 @@ chroma_db/
 ```
 
 > **🚨 `.env` in `.dockerignore` is not optional.** Without it, `COPY . .` bakes your API key into an image layer that anyone who pulls the image can extract. Deleting the file in a later layer does **not** remove it — layers are additive and every one is readable.
+
+![Docker layers are additive: a later RUN rm leaves the earlier COPY layer intact and readable, while a .dockerignore keeps the secret out of every layer](../images/docker-layers-secrets.png)
 
 ---
 

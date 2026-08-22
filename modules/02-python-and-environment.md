@@ -223,6 +223,8 @@ Your computer
     └── .venv/  →  LangChain 0.3  ← Project B sees only this
 ```
 
+![Without a virtual environment one upgrade breaks another project; with one, each project gets its own Python and its own package versions](../images/virtual-environments.png)
+
 Both projects work. Neither can break the other.
 
 **Analogy.** A shared kitchen where everyone dumps ingredients into one pot — someone adds chilli, someone else's dessert is ruined. A virtual environment gives each cook their own kitchen.
@@ -614,6 +616,8 @@ print(messages[-1]["content"])   # Can you give an example?
 messages.append({"role": "user", "content": "Thanks!"})
 print(f"The conversation now has {len(messages)} messages.")   # 5
 ```
+
+![Anatomy of a chat API messages list: an ordered list of dictionaries, each with a role and content, and how indexing into it works](../images/chat-api-messages-anatomy.png)
 
 **Stop and make sure this shape makes sense to you.** `messages[0]["content"]` reads as: take the list's first item (a dictionary), then get its `content` key. Every API call in the remaining twelve modules uses this structure, and the three roles — `system`, `user`, `assistant` — are what Module 5 is about.
 
@@ -1107,6 +1111,8 @@ Note what that last block does and doesn't do: it confirms the key is present an
 | `.env` | Your real secrets | ❌ **Never** |
 
 Collaborators clone the repo, copy `.env.example` to `.env`, and add their own keys. Nobody's secrets travel.
+
+![Two paths for an API key: hardcoding it leads through git to a public repository and a bill, while the .env pattern stops it at the gitignore boundary](../images/api-key-two-paths.png)
 
 ### If you leak a key
 
