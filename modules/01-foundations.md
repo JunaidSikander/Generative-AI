@@ -64,10 +64,10 @@ graph TD
         end
     end
 
-    style AI fill:#e8f0fe,stroke:#4285f4,stroke-width:2px
-    style ML fill:#e6f4ea,stroke:#34a853,stroke-width:2px
-    style DL fill:#fef7e0,stroke:#fbbc04,stroke-width:2px
-    style GENAI fill:#fce8e6,stroke:#ea4335,stroke-width:2px
+    style AI fill:#e8f0fe,stroke:#4285f4,stroke-width:2px,color:#1e3a8a
+    style ML fill:#e6f4ea,stroke:#34a853,stroke-width:2px,color:#166534
+    style DL fill:#fef7e0,stroke:#fbbc04,stroke-width:2px,color:#854d0e
+    style GENAI fill:#fce8e6,stroke:#ea4335,stroke-width:2px,color:#b91c1c
 ```
 
 Read it from the outside in. Each circle is a **subset** of the one containing it:
