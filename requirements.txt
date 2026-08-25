@@ -1,5 +1,5 @@
 # ============================================================
-#  GenAI From Scratch — Python dependencies
+#  Prompt to Production — Python dependencies
 # ============================================================
 #
 #  INSTALL EVERYTHING (recommended once you reach Module 2):

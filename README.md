@@ -1,10 +1,17 @@
-# GenAI From Scratch
+# Prompt to Production
 
-**A 14-module, hands-on course that takes you from "I've never written Python" to "I deployed an AI app that answers questions about my own documents."**
+**A 14-module, hands-on generative AI course that takes you from "I've never written Python" to "I deployed an AI app that answers questions about my own documents."**
+
+![Modules](https://img.shields.io/badge/modules-14-1B3A6B?style=flat-square)
+![Hands-on labs](https://img.shields.io/badge/labs-14-0D9488?style=flat-square)
+![Prerequisites](https://img.shields.io/badge/prerequisites-none-16A34A?style=flat-square)
+![Cost](https://img.shields.io/badge/cost-%240%20to%20%2415-D97706?style=flat-square)
+![Content licence](https://img.shields.io/badge/content-CC%20BY%204.0-7C3AED?style=flat-square)
+![Code licence](https://img.shields.io/badge/code-MIT-2563EB?style=flat-square)
 
 No prior AI knowledge. No prior Python. No maths beyond arithmetic. Every concept gets a plain-English explanation, an everyday analogy, and a small piece of commented code you can actually run.
 
-![The GenAI From Scratch course map: fourteen modules in six parts, with dependency arcs, two portfolio milestones and a shortest path to a working RAG app](images/course-map.png)
+![The Prompt to Production course map: fourteen modules in six parts, with dependency arcs, two portfolio milestones and a shortest path to a working RAG app](images/course-map.png)
 
 ---
 
@@ -147,7 +154,7 @@ An **API key** from at least one model provider, *or* [Ollama](https://ollama.co
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd GenAI
+cd prompt-to-production
 ```
 
 No Git? Click the green **Code** button on GitHub → **Download ZIP** → unzip it.
@@ -155,7 +162,7 @@ No Git? Click the green **Code** button on GitHub → **Download ZIP** → unzip
 ### 2. Understand the layout
 
 ```
-GenAI/
+prompt-to-production/
 ├── README.md              ← you are here
 ├── requirements.txt       ← all Python packages, with comments explaining each
 ├── .env.example           ← template for your API keys (copy to .env)

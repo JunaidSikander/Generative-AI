@@ -1,5 +1,5 @@
 """
-check_setup.py - Environment diagnostic for GenAI From Scratch.
+check_setup.py - Environment diagnostic for Prompt to Production.
 
 Run this any time something breaks. It checks your Python version, whether a
 virtual environment is active, which packages are installed, and whether your
@@ -329,7 +329,7 @@ def print_summary():
 
 def main():
     print()
-    print("GenAI From Scratch - environment check")
+    print("Prompt to Production - environment check")
 
     check_python_version()
     check_virtual_environment()

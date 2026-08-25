@@ -51,13 +51,13 @@ From the **repo root** (not this lab folder):
 
 ```powershell
 # Windows PowerShell
-cd "F:\Programming\AI\GenAI"
+cd "F:\Programming\AI\prompt-to-production"
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 ```bash
 # macOS / Linux
-cd /path/to/GenAI
+cd /path/to/prompt-to-production
 python3 -m venv .venv
 source .venv/bin/activate
 ```

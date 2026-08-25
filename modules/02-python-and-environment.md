@@ -100,7 +100,7 @@ Lists files and folders in the current directory.
 ```powershell
 cd Documents          # go into the Documents folder
 cd ..                 # go UP one level
-cd "F:\Programming\AI\GenAI"   # jump to an exact path (quotes handle spaces)
+cd "F:\Programming\AI\prompt-to-production"   # jump to an exact path (quotes handle spaces)
 ```
 
 `cd` = "change directory". **This is the command you'll use most**, and forgetting to `cd` into your project folder is the single most common reason a command "doesn't work".
@@ -236,7 +236,7 @@ Both projects work. Neither can break the other.
 Navigate to your project folder first — **this matters**, because the environment is created wherever you currently are:
 
 ```powershell
-cd "F:\Programming\AI\GenAI"     # your project folder
+cd "F:\Programming\AI\prompt-to-production"     # your project folder
 python -m venv .venv
 ```
 
@@ -263,7 +263,7 @@ source .venv/bin/activate
 **You'll know it worked** because your prompt now starts with `(.venv)`:
 
 ```
-(.venv) PS F:\Programming\AI\GenAI>
+(.venv) PS F:\Programming\AI\prompt-to-production>
 ```
 
 That prefix is your indicator that packages will install into this project rather than system-wide. **Check for it before every `pip install`.**
@@ -298,7 +298,7 @@ The `(.venv)` prefix disappears. Closing the terminal has the same effect — wh
 ### The daily routine
 
 ```powershell
-cd "F:\Programming\AI\GenAI"        # 1. go to the project
+cd "F:\Programming\AI\prompt-to-production"        # 1. go to the project
 .\.venv\Scripts\Activate.ps1        # 2. activate  (source .venv/bin/activate on mac/linux)
 # ... work ...
 deactivate                          # 3. optional
@@ -1008,10 +1008,10 @@ Fix it by registering your environment as a named kernel:
 ```powershell
 # with .venv activated
 pip install ipykernel
-python -m ipykernel install --user --name=genai --display-name "Python (GenAI)"
+python -m ipykernel install --user --name=prompt-to-production --display-name "Python (Prompt to Production)"
 ```
 
-Then in Jupyter, choose **Kernel → Change Kernel → Python (GenAI)**. Now the notebook uses your project's packages.
+Then in Jupyter, choose **Kernel → Change Kernel → Python (Prompt to Production)**. Now the notebook uses your project's packages.
 
 ---
 
