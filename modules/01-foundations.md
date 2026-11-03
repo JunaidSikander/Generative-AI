@@ -9,6 +9,8 @@
 | **You need** | A web browser. No installs, no accounts, no code. |
 | **Cost** | Free |
 
+> **Optional interactive activity:** [Classify examples as AI, machine learning, deep learning, or generative AI](https://junaidsikander.github.io/Generative-AI/#module-1). This browser simulation is optional; the [original Module 1 lab](../labs/01-foundations/README.md) remains available.
+
 ---
 
 ## Contents

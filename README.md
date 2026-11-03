@@ -202,6 +202,21 @@ For each module, in this order:
 - **Getting stuck is normal.** Run `python labs/02-python-environment/check_setup.py`, then check [Appendix D](appendix/D-troubleshooting.md), then open an issue.
 - **Type the code.** Copy-paste teaches your clipboard, not you.
 
+### Optional interactive activities
+
+Want to explore a concept in your browser before or after the lab? Try the [optional interactive activities](https://junaidsikander.github.io/Generative-AI/). They accompany Modules 1, 3, 5, 7 and 8, run locally in your browser without an account or API key, and use clearly labeled simulations—not actual AI model responses. The original reading and Python labs remain the canonical course and hands-on path.
+
+To run the companion site locally, install Node.js 20 or newer, then run `npm ci` and `npm start` from the `site/` directory. Docusaurus serves the site at `http://localhost:3000/Generative-AI/`. Create a production build with `npm run build`; the static output is written to `site/build/`.
+
+The GitHub Actions workflow in `.github/workflows/deploy-pages.yml` builds only `site/`, validates site changes on pull requests, and deploys to GitHub Pages after changes reach `main`. It uses the project-site base path `/Generative-AI/` and least-privilege Pages deployment permissions. To publish:
+
+1. Open the repository on GitHub and go to **Settings → Pages**. Under **Build and deployment → Source**, select **GitHub Actions** and save.
+2. Push this branch and open a pull request targeting `main` (or merge it if your repository permits direct pushes). The workflow builds the site on the pull request but does not deploy from it.
+3. Merge the pull request into `main`. The workflow builds and deploys automatically. You can follow progress in **Actions → Deploy interactive site to GitHub Pages**.
+4. When the deployment job succeeds, visit [https://junaidsikander.github.io/Generative-AI/](https://junaidsikander.github.io/Generative-AI/). A manual workflow run can also be started from the Actions tab on `main`; runs from other branches are build-only.
+
+No deployment happens when you run the site locally. GitHub Pages publishes a public website, so check that the content you intend to publish is suitable for public access.
+
 ## A Note on Cost
 
 You can complete this entire course for **free**, or spend roughly **$5–15** for a smoother experience. Your choice, and you can mix the two.

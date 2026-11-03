@@ -10,6 +10,8 @@
 | **Cost** | ~$0.10 for the lab, or free with Ollama |
 | **🏗️ Milestone** | **This is the course's first portfolio piece.** |
 
+> **Optional interactive activity:** [Run the guided RAG simulation](https://junaidsikander.github.io/Generative-AI/#module-8) and inspect retrieved sample passages and citations. It uses local keyword matching and a deterministic excerpt—not an AI model. The [original Module 8 lab](../labs/08-rag/README.md) remains the hands-on path for building RAG with real components.
+
 ---
 
 ## Contents

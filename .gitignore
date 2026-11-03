@@ -43,3 +43,8 @@ desktop.ini
 labs/**/output/
 labs/**/generated/
 *.log
+
+# ---- Optional Docusaurus site ----
+site/node_modules/
+site/build/
+site/.docusaurus/

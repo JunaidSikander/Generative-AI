@@ -9,6 +9,8 @@
 | **Packages** | `numpy`, `faiss-cpu`, `chromadb`, `sentence-transformers` |
 | **Cost** | Free — everything runs locally |
 
+> **Optional interactive activity:** [Search a small sample vector collection](https://junaidsikander.github.io/Generative-AI/#module-7). This keyword-routed, hand-authored vector simulation is not a real database; use the [original Module 7 lab](../labs/07-vector-databases/README.md) to work with FAISS or Chroma.
+
 ---
 
 ## Contents
