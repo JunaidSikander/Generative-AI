@@ -9,6 +9,8 @@
 | **Packages** | `openai`, `python-dotenv`, `pydantic` |
 | **Cost** | ~$0.02 for the lab, or free with Ollama |
 
+> **Optional interactive activity:** [Edit a prompt and compare illustrative outputs](https://junaidsikander.github.io/Generative-AI/#module-5). The preview is simulated and does not call an AI model; the [original Module 5 lab](../labs/05-prompt-engineering/README.md) remains the hands-on path.
+
 ---
 
 ## Contents

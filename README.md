@@ -202,6 +202,14 @@ For each module, in this order:
 - **Getting stuck is normal.** Run `python labs/02-python-environment/check_setup.py`, then check [Appendix D](appendix/D-troubleshooting.md), then open an issue.
 - **Type the code.** Copy-paste teaches your clipboard, not you.
 
+### Optional interactive activities
+
+Want to explore a concept in your browser before or after the lab? Try the [optional interactive activities](https://junaidsikander.github.io/Generative-AI/). They accompany Modules 1, 3, 5, 7 and 8, run locally in your browser without an account or API key, and use clearly labeled simulations—not actual AI model responses. The original reading and Python labs remain the canonical course and hands-on path.
+
+To run the companion site locally, install Node.js 20 or newer, then run `npm ci` and `npm start` from the `site/` directory. Docusaurus serves the site at `http://localhost:3000/Generative-AI/`. Create a production build with `npm run build`; the static output is written to `site/build/`.
+
+The GitHub Actions workflow in `.github/workflows/deploy-pages.yml` builds only `site/` and deploys its static output to GitHub Pages when changes are pushed to `main` (and can also be run manually). It uses the project-site base path `/Generative-AI/` and least-privilege Pages deployment permissions. To enable deployment, confirm that GitHub Pages is configured to use **GitHub Actions** as the build and deployment source in the repository’s **Settings → Pages**. No deployment is performed by running the site locally.
+
 ## A Note on Cost
 
 You can complete this entire course for **free**, or spend roughly **$5–15** for a smoother experience. Your choice, and you can mix the two.

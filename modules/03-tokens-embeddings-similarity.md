@@ -9,6 +9,8 @@
 | **Packages** | `tiktoken`, `numpy`, `sentence-transformers` (all free, no API key needed) |
 | **Cost** | Free — the lab runs entirely on your machine |
 
+> **Optional interactive activity:** [Explore tokenization and compare sample embeddings](https://junaidsikander.github.io/Generative-AI/#module-3). Token splitting and vectors are illustrative simulations; continue to the [original Module 3 lab](../labs/03-tokens-embeddings-similarity/README.md) to work with real tokenizers and embeddings.
+
 ---
 
 ## Contents
