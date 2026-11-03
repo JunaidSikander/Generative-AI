@@ -208,7 +208,14 @@ Want to explore a concept in your browser before or after the lab? Try the [opti
 
 To run the companion site locally, install Node.js 20 or newer, then run `npm ci` and `npm start` from the `site/` directory. Docusaurus serves the site at `http://localhost:3000/Generative-AI/`. Create a production build with `npm run build`; the static output is written to `site/build/`.
 
-The GitHub Actions workflow in `.github/workflows/deploy-pages.yml` builds only `site/` and deploys its static output to GitHub Pages when changes are pushed to `main` (and can also be run manually). It uses the project-site base path `/Generative-AI/` and least-privilege Pages deployment permissions. To enable deployment, confirm that GitHub Pages is configured to use **GitHub Actions** as the build and deployment source in the repository’s **Settings → Pages**. No deployment is performed by running the site locally.
+The GitHub Actions workflow in `.github/workflows/deploy-pages.yml` builds only `site/`, validates site changes on pull requests, and deploys to GitHub Pages after changes reach `main`. It uses the project-site base path `/Generative-AI/` and least-privilege Pages deployment permissions. To publish:
+
+1. Open the repository on GitHub and go to **Settings → Pages**. Under **Build and deployment → Source**, select **GitHub Actions** and save.
+2. Push this branch and open a pull request targeting `main` (or merge it if your repository permits direct pushes). The workflow builds the site on the pull request but does not deploy from it.
+3. Merge the pull request into `main`. The workflow builds and deploys automatically. You can follow progress in **Actions → Deploy interactive site to GitHub Pages**.
+4. When the deployment job succeeds, visit [https://junaidsikander.github.io/Generative-AI/](https://junaidsikander.github.io/Generative-AI/). A manual workflow run can also be started from the Actions tab on `main`; runs from other branches are build-only.
+
+No deployment happens when you run the site locally. GitHub Pages publishes a public website, so check that the content you intend to publish is suitable for public access.
 
 ## A Note on Cost
 
